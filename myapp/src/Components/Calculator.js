@@ -24,7 +24,7 @@ class Calculator extends React.Component {
         }
         let loading = false;
         this.onChange = this.onChange.bind(this);
-        this.calculate = this.onChange.bind(this);
+        this.calculate = this.calculate.bind(this);
     }
 
     onChange(e) {
