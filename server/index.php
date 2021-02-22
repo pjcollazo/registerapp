@@ -37,8 +37,13 @@ function getChange(float $total, float $paid) {
 
 
 if (isset($_GET['total']) && isset($_GET['paid'])) {
-    $data = getChange($_GET['total'], $_GET['paid']);
+    //set reponse headers
     header('Content-type: application/json');
+    header('Access-Control-Allow-Methods: GET, POST');
+    header("Access-Control-Allow-Headers: *");
+    header('Access-Control-Allow-Origin: *'); 
+    //
+    $data = getChange($_GET['total'], $_GET['paid']);
     echo json_encode($data);
 }
 
