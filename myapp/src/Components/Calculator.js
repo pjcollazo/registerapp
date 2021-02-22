@@ -37,18 +37,17 @@ class Calculator extends React.Component {
         ));
     }
 
-    calculate() {
+    async calculate() {
         let response = null;
-        alert('s')
         try {
-            response = fetch('http://localhost:2000/')
+            response = await fetch(`http://localhost:2000/?total=${this.state.due}&paid=${this.state.paid}`)
             .then(res => {
                 if (res.ok) return res.json()
             })
         } catch(e) {
             response = {'error': e}
         }
-        //this.setState({denominations: response})
+        this.setState({denominations: response})
         return response
     }
 
