@@ -36,8 +36,8 @@ function getChange(float $total, float $paid) {
 }
 
 
-if (isset($_POST['total']) && isset($_POST['paid'])) {
-    $data = getChange($_POST['total'], $_POST['paid']);
+if (isset($_GET['total']) && isset($_GET['paid'])) {
+    $data = getChange($_GET['total'], $_GET['paid']);
     echo json_encode($data);
 }
 
