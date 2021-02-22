@@ -1,0 +1,5 @@
+##### Composer
+composer.phar
+vendor/
+#### Environment Vars
+.env
